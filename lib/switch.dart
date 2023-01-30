@@ -16,7 +16,7 @@ class _SwitchExampleState extends State<SwitchExample> {
     return CupertinoSwitch(
       // This bool value toggles the switch.
       value: light,
-      activeColor: Colors.red,
+      activeColor: Colors.blue,
       onChanged: (bool value) {
         // This is called when the user toggles the switch.
         setState(() {

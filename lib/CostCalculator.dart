@@ -20,11 +20,11 @@ class _CostCalculatorState extends State<CostCalculator> {
       body: ListView(
         children: <Widget>[
           Text('Калькулятор стоимости продления'.toUpperCase(),
-              textAlign: TextAlign.left,
+              textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyMedium),
           Text(
             'Выберите функции, которые вам необходимы',
-            textAlign: TextAlign.left,
+            textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 14.0,
                 fontFamily: 'Steppe',
@@ -51,6 +51,12 @@ class _CostCalculatorState extends State<CostCalculator> {
             description: '',
             price: 1000,
             title: 'Базовый тариф',
+          ),
+          ElevatedButton(
+            onPressed: () {
+              print('button pressed!');
+            },
+            child: Text('ОПЛАТИТЬ'),
           ),
         ],
       ),
