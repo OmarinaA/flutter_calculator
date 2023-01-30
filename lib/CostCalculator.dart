@@ -32,7 +32,26 @@ class _CostCalculatorState extends State<CostCalculator> {
                 wordSpacing: 8,
                 height: 1.5),
           ),
-          LisTileExample(),
+          LisTileExample(
+            description: '',
+            price: 5000,
+            title: 'Базовый тариф',
+          ),
+          LisTileExample(
+            description: '',
+            price: 1000,
+            title: 'Базовый тариф',
+          ),
+          LisTileExample(
+            description: '',
+            price: 1000,
+            title: 'Базовый тариф',
+          ),
+          LisTileExample(
+            description: '',
+            price: 1000,
+            title: 'Базовый тариф',
+          ),
         ],
       ),
     );
