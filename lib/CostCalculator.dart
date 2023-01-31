@@ -79,7 +79,7 @@ class _CostCalculatorState extends State<CostCalculator> {
               textAlign: TextAlign.left,
               style: Theme.of(context).textTheme.titleLarge),
           Padding(
-            padding: EdgeInsets.only(bottom: 45, top: 20),
+            padding: EdgeInsets.only(bottom: 40, top: 20),
             child: Text('Выберите функции, которые вам необходимы',
                 textAlign: TextAlign.left,
                 style: Theme.of(context).textTheme.titleMedium),
