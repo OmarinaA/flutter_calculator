@@ -37,7 +37,7 @@ class LisTileExample extends StatelessWidget {
                 WidgetSpan(child: Icon(Icons.currency_ruble_rounded))
               ])),
         ),
-        if (description != null) MarkdownBody(data: description ?? ''),
+        if (description != null) MarkdownBody( styleSheet: MarkdownStyleSheet(p:Theme.of(context).textTheme.bodyLarge,listBullet: TextStyle(color: Theme.of(context).primaryColor)), data: description ?? ''),
       ],
     );
   }

@@ -74,8 +74,6 @@ class _CostCalculatorState extends State<CostCalculator> {
       ),
       body: ListView(
         padding: EdgeInsets.only(left: 60, top: 50),
-      body: ListView(
-        padding: EdgeInsets.only(left: 60, right: 200, top: 50),
         children: <Widget>[
           Text('Калькулятор стоимости продления'.toUpperCase(),
               textAlign: TextAlign.left,
@@ -90,7 +88,7 @@ class _CostCalculatorState extends State<CostCalculator> {
             price: basicTariff.price,
             title: basicTariff.title,
             description:
-                '* Общий функционал \n* Дизайн \n* Интеграции \n* Рассылки \n* Поддержка',
+                '* ### Общий функционал \nЛичный кабинет, Сообщества, Трекер активности, Социальная сеть, Геймификация \n* ### Дизайн \n7 цветов \n* ### Интеграции \n1С, Крафт, Клабис, Юниверс, A&A, МФ Расписание, Запись на уроки, Запись к тренеру, Личный кабинет Настройка платежной системы (3 варианта)\n* ### Рассылки \n* ### Поддержка \nЧат со службой заботы',
             isSelected: basicTariff.isSelected,
             onChanged: (value) {},
           ),
