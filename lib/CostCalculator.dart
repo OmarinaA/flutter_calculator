@@ -47,88 +47,42 @@ class _CostCalculatorState extends State<CostCalculator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-          padding: EdgeInsets.only(left: 60, right: 200, top: 50),
-          children: <Widget>[
-            Text('Калькулятор стоимости продления'.toUpperCase(),
-                textAlign: TextAlign.left,
-                style: Theme.of(context).textTheme.bodyMedium),
-            Padding(
-              padding: EdgeInsets.only(bottom: 45, top: 20),
-              child: Text(
-                'Выберите функции, которые вам необходимы',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  fontSize: 14.0,
-                  fontFamily: 'Steppe',
-                  color: Color.fromARGB(255, 84, 84, 84),
-                  wordSpacing: 8,
-                ),
-              ),
-            ),
-            LisTileExample(
-              price: basicTariff.price,
-              title: basicTariff.title,
-              description: '',
-              isSelected: basicTariff.isSelected,
-              onChanged: (value) {},
-            ),
-            LisTileExample(
-              price: customDesignLogo.price,
-              title: customDesignLogo.title,
-              description: '',
-              isSelected: customDesignLogo.isSelected,
-              onChanged: (value) {},
-            ),
-            LisTileExample(
-              price: scheduleWidget.price,
-              title: scheduleWidget.title,
-              description: '',
-              isSelected: scheduleWidget.isSelected,
-              onChanged: (value) {},
-            ),
-            LisTileExample(
-              price: analytics.price,
-              title: analytics.title,
-              description: '',
-              isSelected: analytics.isSelected,
-              onChanged: (value) {},
-            ),
-            LisTileExample(
-              price: uploadOnlineWorkouts.price,
-              title: uploadOnlineWorkouts.title,
-              description: '',
-              isSelected: uploadOnlineWorkouts.isSelected,
-              onChanged: (value) {},
-            ),
-            Padding(
-              padding: EdgeInsets.only(bottom: 20, top: 40),
-              child: const Divider(
-                color: Color(0xffD9D9D9),
-                thickness: 2,
-                indent: 5,
-                endIndent: 5,
-              ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.only(bottom: 40),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Divider(
+              color: Color(0xffD9D9D9),
+              thickness: 2,
+              indent: 5,
+              endIndent: 5,
+              height: 1,
             ),
             LisTileExample(
               price: total.price,
               title: total.title,
-              description: '',
-              isSelected: total.isSelected,
-              onChanged: (value) {},
             ),
-          ]),
-        padding: EdgeInsets.only(left: 60, right: 200, top: 50),
+            ElevatedButton(
+              onPressed: () {
+                print('button pressed!');
+              },
+              child: Text('ОПЛАТИТЬ'),
+            ),
+          ],
+        ),
+      ),
+      body: ListView(
+        padding: EdgeInsets.only(left: 60, top: 50),
         children: <Widget>[
           Text('Калькулятор стоимости продления'.toUpperCase(),
               textAlign: TextAlign.left,
               style: Theme.of(context).textTheme.titleLarge),
           Padding(
             padding: EdgeInsets.only(bottom: 45, top: 20),
-            child: Text(
-              'Выберите функции, которые вам необходимы',
-              textAlign: TextAlign.left,
-              style: Theme.of(context).textTheme.titleMedium),
+            child: Text('Выберите функции, которые вам необходимы',
+                textAlign: TextAlign.left,
+                style: Theme.of(context).textTheme.titleMedium),
           ),
           LisTileExample(
             price: basicTariff.price,
@@ -164,25 +118,6 @@ class _CostCalculatorState extends State<CostCalculator> {
             description: '',
             isSelected: uploadOnlineWorkouts.isSelected,
             onChanged: (value) {},
-          ),
-          Padding(
-            padding: EdgeInsets.only(bottom: 20, top: 40),
-            child: const Divider(
-              color: Color(0xffD9D9D9),
-              thickness: 2,
-              indent: 5,
-              endIndent: 5,
-            ),
-          ),
-          LisTileExample(
-            price: total.price,
-            title: total.title,
-          ),
-          ElevatedButton(
-            onPressed: () {
-              print('button pressed!');
-            },
-            child: Text('ОПЛАТИТЬ'),
           ),
         ],
       ),
