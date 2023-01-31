@@ -51,20 +51,14 @@ class _CostCalculatorState extends State<CostCalculator> {
         padding: EdgeInsets.only(left: 60, right: 200, top: 50),
         children: <Widget>[
           Text('Калькулятор стоимости продления'.toUpperCase(),
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyMedium),
+              textAlign: TextAlign.left,
+              style: Theme.of(context).textTheme.titleLarge),
           Padding(
             padding: EdgeInsets.only(bottom: 45, top: 20),
             child: Text(
               'Выберите функции, которые вам необходимы',
               textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 14.0,
-                fontFamily: 'Steppe',
-                color: Color.fromARGB(255, 84, 84, 84),
-                wordSpacing: 8,
-              ),
-            ),
+              style: Theme.of(context).textTheme.titleMedium),
           ),
           LisTileExample(
             price: basicTariff.price,

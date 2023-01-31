@@ -28,7 +28,7 @@ class LisTileExample extends StatelessWidget {
               : CupertinoSwitch(
                   // This bool value toggles the switch.
                   value: isSelected ?? false,
-                  activeColor: Colors.red,
+                  activeColor: Color(0xff1E6FFE),
                   onChanged: onChanged),
           title: Text(title),
           trailing: Text.rich(TextSpan(
