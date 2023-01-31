@@ -74,6 +74,8 @@ class _CostCalculatorState extends State<CostCalculator> {
       ),
       body: ListView(
         padding: EdgeInsets.only(left: 60, top: 50),
+      body: ListView(
+        padding: EdgeInsets.only(left: 60, right: 200, top: 50),
         children: <Widget>[
           Text('Калькулятор стоимости продления'.toUpperCase(),
               textAlign: TextAlign.left,
@@ -87,7 +89,8 @@ class _CostCalculatorState extends State<CostCalculator> {
           LisTileExample(
             price: basicTariff.price,
             title: basicTariff.title,
-            description: '',
+            description:
+                '* Общий функционал \n* Дизайн \n* Интеграции \n* Рассылки \n* Поддержка',
             isSelected: basicTariff.isSelected,
             onChanged: (value) {},
           ),
