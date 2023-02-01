@@ -68,7 +68,7 @@ class _CostCalculatorState extends State<CostCalculator> {
                 print('button pressed!');
               },
               child: Text('ОПЛАТИТЬ'),
-            ),
+          ),
           ],
         ),
       ),
