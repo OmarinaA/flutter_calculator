@@ -49,7 +49,11 @@ class _CostCalculatorState extends State<CostCalculator> {
     return Scaffold(
       bottomNavigationBar: Padding(
         padding: EdgeInsets.only(bottom: 40),
-        child: Column(
+        // child: Center(
+        //   child: Container(
+        //   width: 700.0,
+        //   color: Colors.white,
+            child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             const Divider(
@@ -74,7 +78,7 @@ class _CostCalculatorState extends State<CostCalculator> {
       ),
       body: ListView(
         padding: EdgeInsets.only(left: 60, top: 50),
-        children: <Widget>[
+          children: <Widget>[
           Text('Калькулятор стоимости продления'.toUpperCase(),
               textAlign: TextAlign.left,
               style: Theme.of(context).textTheme.titleLarge),
@@ -121,7 +125,8 @@ class _CostCalculatorState extends State<CostCalculator> {
             onChanged: (value) {},
           ),
         ],
-      ),
+      )
     );
+    
   }
 }
