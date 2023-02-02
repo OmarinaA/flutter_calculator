@@ -35,8 +35,9 @@ class LisTileExample extends StatelessWidget {
           trailing: Text.rich(TextSpan(
               text: price.toStringAsFixed(0),
               children: [
-                WidgetSpan(child: Icon(Icons.currency_ruble_rounded))
-              ])),
+                WidgetSpan(child: Icon(Icons.currency_ruble_rounded)
+                // style: TextStyle(color: Theme.of(context).primaryColor)
+        )])),
         ),
         if (description != null) MarkdownBody( styleSheet: MarkdownStyleSheet(p:Theme.of(context).textTheme.bodyLarge,listBullet: TextStyle(color: Theme.of(context).primaryColor)), data: description ?? ''),
       ],

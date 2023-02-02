@@ -28,13 +28,16 @@ class _CostCalculatorState extends State<CostCalculator> {
       }
     }
 
-    return Scaffold(
+    return Container( 
+        decoration: BoxDecoration(
+            border: Border.all(
+                color: Theme.of(context).cardColor,
+                width: 60),
+            borderRadius: BorderRadius.circular(12),
+        ),
+      child: Scaffold(
       bottomNavigationBar: Padding(
-        padding: EdgeInsets.only(bottom: 40),
-        // child: Center(
-        //   child: Container(
-        //   width: 700.0,
-        //   color: Colors.white,
+        padding: EdgeInsets.only(bottom: 10),
             child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -59,7 +62,7 @@ class _CostCalculatorState extends State<CostCalculator> {
         ),
       ),
       body: ListView(
-        padding: EdgeInsets.only(left: 60, top: 50),
+        padding: EdgeInsets.only(left: 10, top: 30),
           children: <Widget>[
           Text('Калькулятор стоимости продления'.toUpperCase(),
               textAlign: TextAlign.left,
@@ -111,6 +114,7 @@ class _CostCalculatorState extends State<CostCalculator> {
               }),
         ],
       )
+    ), 
     );
     
   }
