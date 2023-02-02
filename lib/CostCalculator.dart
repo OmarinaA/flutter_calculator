@@ -10,42 +10,24 @@ class CostCalculator extends StatefulWidget {
 }
 
 class _CostCalculatorState extends State<CostCalculator> {
-  final basicTariff = OneTariff(
-    title: 'Базовый тариф',
-    price: 5000,
-    isSelected: true,
-  );
-
-  final customDesignLogo = OneTariff(
-    title: 'Индивидуальный дизайн + ваш логотип ',
-    price: 3000,
-    isSelected: false,
-  );
-  final scheduleWidget = OneTariff(
-    title: 'Виджет расписания на ваш сайт',
-    price: 1000,
-    isSelected: false,
-  );
-
-  final analytics = OneTariff(
-    title: 'Аналитика',
-    price: 1000,
-    isSelected: false,
-  );
-
-  final uploadOnlineWorkouts = OneTariff(
-    title: 'Возможность загружать онлайн-тренировки',
-    price: 1000,
-    isSelected: false,
-  );
-
-  final total = OneTariff(
-    title: 'Общая стоимость',
-    price: 1000,
-  );
+  double sum = basicTariff.price;
 
   @override
   Widget build(BuildContext context) {
+    onChanged(OneTariff tariff, bool? value) {
+      if (mounted) {
+        setState(() {
+          if (value == true) {
+            tariff.isSelected = true;
+            sum += tariff.price;
+          } else if (value == false) {
+            tariff.isSelected = false;
+            sum -= tariff.price;
+          }
+        });
+      }
+    }
+
     return Scaffold(
       bottomNavigationBar: Padding(
         padding: EdgeInsets.only(bottom: 40),
@@ -60,8 +42,8 @@ class _CostCalculatorState extends State<CostCalculator> {
               height: 1,
             ),
             LisTileExample(
-              price: total.price,
-              title: total.title,
+              price: sum,
+              title: 'Общая стоимость',
             ),
             ElevatedButton(
               onPressed: () {
@@ -90,36 +72,39 @@ class _CostCalculatorState extends State<CostCalculator> {
             description:
                 '* ### Общий функционал \nЛичный кабинет, Сообщества, Трекер активности, Социальная сеть, Геймификация \n* ### Дизайн \n7 цветов \n* ### Интеграции \n1С, Крафт, Клабис, Юниверс, A&A, МФ Расписание, Запись на уроки, Запись к тренеру, Личный кабинет Настройка платежной системы (3 варианта)\n* ### Рассылки \n* ### Поддержка \nЧат со службой заботы',
             isSelected: basicTariff.isSelected,
-            onChanged: (value) {},
           ),
           LisTileExample(
-            price: customDesignLogo.price,
-            title: customDesignLogo.title,
-            description: '',
-            isSelected: customDesignLogo.isSelected,
-            onChanged: (value) {},
-          ),
+              price: customDesignLogo.price,
+              title: customDesignLogo.title,
+              description: '',
+              isSelected: customDesignLogo.isSelected,
+              onChanged: (value) {
+                onChanged(customDesignLogo, value);
+              }),
           LisTileExample(
-            price: scheduleWidget.price,
-            title: scheduleWidget.title,
-            description: '',
-            isSelected: scheduleWidget.isSelected,
-            onChanged: (value) {},
-          ),
+              price: scheduleWidget.price,
+              title: scheduleWidget.title,
+              description: '',
+              isSelected: scheduleWidget.isSelected,
+              onChanged: (value) {
+                onChanged(scheduleWidget, value);
+              }),
           LisTileExample(
-            price: analytics.price,
-            title: analytics.title,
-            description: '',
-            isSelected: analytics.isSelected,
-            onChanged: (value) {},
-          ),
+              price: analytics.price,
+              title: analytics.title,
+              description: '',
+              isSelected: analytics.isSelected,
+              onChanged: (value) {
+                onChanged(analytics, value);
+              }),
           LisTileExample(
-            price: uploadOnlineWorkouts.price,
-            title: uploadOnlineWorkouts.title,
-            description: '',
-            isSelected: uploadOnlineWorkouts.isSelected,
-            onChanged: (value) {},
-          ),
+              price: uploadOnlineWorkouts.price,
+              title: uploadOnlineWorkouts.title,
+              description: '',
+              isSelected: uploadOnlineWorkouts.isSelected,
+              onChanged: (value) {
+                onChanged(uploadOnlineWorkouts, value);
+              }),
         ],
       ),
     );
