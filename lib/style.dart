@@ -8,14 +8,15 @@ final style=ThemeData(
   // Define the default font family.
   fontFamily: 'Steppe',
   elevatedButtonTheme: ElevatedButtonThemeData(
-    style: ElevatedButton.styleFrom(backgroundColor: Color(0xff1E6FFE))
+    style: ElevatedButton.styleFrom(backgroundColor: Color(0xff1E6FFE),
+    minimumSize: const Size.fromHeight(50)) 
   ),
   // Define the default `TextTheme`. Use this to specify the default
   // text styling for headlines, titles, bodies of text, and more.
   textTheme: const TextTheme(
     titleLarge: TextStyle(
       fontSize: 20.0,
-      color: Color.fromARGB(200, 0, 0, 0),
+      color: Color(0xff1E6FFE),
       wordSpacing: 8,
     ),
     titleMedium: TextStyle(
@@ -30,7 +31,7 @@ final style=ThemeData(
     ),
     bodyMedium: TextStyle(
       fontSize: 20.0,
-      color: Color.fromARGB(200, 0, 0, 0),
+      color: Color(0xff1E6FFE),
       wordSpacing: 8,
     ),
   ),
