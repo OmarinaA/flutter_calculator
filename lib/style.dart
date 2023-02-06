@@ -4,6 +4,7 @@ final style=ThemeData(
   // Define the default brightness and colors.
   brightness: Brightness.light,
   primaryColor: Color(0xff1E6FFE),
+  cardColor: Color(0xffFFFFFF),
 
   // Define the default font family.
   fontFamily: 'Steppe',
